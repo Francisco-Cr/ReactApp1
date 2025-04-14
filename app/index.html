@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./elegante.css">
+    <title>Sistema de facturas</title>
+</head>
+<body>
+    <div class="contenido">
+        <form name="formulario" id="formulario" onsubmit="guardar(this)">
+            <h1><b>Ingrese Datos</b></h1> <br>
+                <p>
+                    Número de Factura: <br> <input type="number" name="Factura" id="Factura" class="formulario"> <br><br>
+                    Nombre del Cliente: <br> <input type="text" name="Nombre" id="Nombre" class="formulario"> <br><br>
+                    Precio Neto: <br><input type="number" name="Neto" id="Neto" class="formulario"> <br><br>
+                    IVA: <br><input step="any" type="number" name="IVA" id="IVA" class="formulario" placeholder="Porcentaje IVA 19%" readonly> <br><br>
+                    Precio Total: <br><input  type="number" name="Total" id="Total" class="formulario" readonly> <br>
+                </p>
+
+                <input class="" type="submit" value="Guardar"/>
+                <input class="" type="button" onclick="TotalFactura()" value="Total"/>
+        </form><br>
+    </div>       
+    <!--2da seccion-->
+    <div class="otra">
+            <h1><b>Suma de montos</b></h1><br>
+            <div id="netoF"></div>
+            <div id="ivaF"></div>
+            <div id="totalF"></div>
+            <div>
+                <h1><b>Datos Ingresados</b></h1>
+                <table class="table" id="tablaDatos">
+                    <tr>
+                        <td>Número de Factura</td>
+                        <td>Nombre del Cliente</td>
+                        <td>Precio Neto</td>
+                        <td>IVA</td>
+                        <td>Total</td>
+                    </tr>
+                </table>
+            </div>
+            <script>
+                document.getElementById("formulario").addEventListener("submit",
+                function(event) {
+                    event.preventDefault()
+                });
+            </script>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
